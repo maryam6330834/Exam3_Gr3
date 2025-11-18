@@ -34,3 +34,21 @@ if __name__ == "__main__":
     duree = input("Entrez la durée du rendez-vous, en minutes : ")
     print(ajouter_apres_dernier(rendez_vous, nom, duree))
 
+def test_ajouter_apres_dernier():
+    #Arrange
+    nom = "Amélie"
+    temps = "45"
+    #Act
+    confirmation = ajouter_apres_dernier(nom , temps)
+    #Assert
+    assert "Rendez-vous confirmer à" in confirmation
+
+def test_ajouter_apres_dernier_duree_minimal(calendrier):
+    #Arrange
+    nom = "Hakim"
+    temps = "15"
+    #Act
+    confirmation = ajouter_apres_dernier(calendrier,nom,temps)
+    #Assert
+    assert "Rendez-vous confimer à " in confirmation
+
